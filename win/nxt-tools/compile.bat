@@ -4,7 +4,7 @@ set B=%~dp0\mingw64\bin\bash.exe
 %B% -c "echo OK" > NUL || goto ERROR_NOBASH
 for %%I in (%B%) do set X=%%~dpI
 set PATH=%X%;%PATH%
-bash -c "source ./compile.sh '%1' '%2' '%cd%' '%3'"
+bash -c "source ./compile.sh '%1' '%2' '%cd%' GNUARM_ROOT='%3'"
 goto NOERROR
 :ERROR_NOBASH
 echo bash interpreter not found
